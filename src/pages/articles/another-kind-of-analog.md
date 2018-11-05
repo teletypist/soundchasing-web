@@ -3,17 +3,12 @@ templateKey: blog-post
 title: Another Kind of Analog
 date: 2018-11-02T09:31:02.446Z
 category: Uncertainty Synthesis
-description: >-
-  You start out with the outcome from tossing a coin, you end up with a sine
-  wave. First introduced by Von Neumann in 1953 when computing hardware was
-  pretty unreliable, stochastic computing represents values using a stream of
-  random bits. Pretty much forgotten as computer hardware became highly reliable
-  into the 80s, it turns out the stochastic approach to representing values also
-  comes in handy for representing continuous audio signals.
 tags:
   - maths
   - synthesis
 ---
+
+
 ### A Bit of Random History
 
 In the period immediately following the Second World War, computing was ready to break into the commercial and corporate world. It was set to revolutionise how people did business, work, and even live their personal lives. Unfortunately, the technology everything was built on was not that reliable.

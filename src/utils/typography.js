@@ -23,6 +23,9 @@ const typography = new Typography({
     ],
   headerFontFamily: ['Rubik', 'sans-serif'],
   bodyFontFamily: ['Lato', 'sans-serif'],
+  bodyWeight: 300,
+  boldWeight: 400,
+  headerWeight: 400,
   // See below for the full list of options.
 })
 

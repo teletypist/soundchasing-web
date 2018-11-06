@@ -27,6 +27,7 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "styled-components": "^4.0.3",
+    "tunnel-agent": "^0.6.0",
     "typography": "^0.16.17",
     "typography-plugin-code": "^0.16.11",
     "uuid": "^3.2.1"

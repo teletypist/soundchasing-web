@@ -3,8 +3,7 @@ templateKey: blog-post
 title: Another Kind of Analog
 date: 2018-11-02T09:31:02.446Z
 category: Probability Synthesis
-description: >-
-  Introduction to Stochastic Bitstream Synthesis
+description: Stochastic Bitstream Synthesis Part 1
 tags:
   - maths
   - synthesis

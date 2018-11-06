@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
+import Layout, {CategoryBlock, ArticleRow, Link} from '../components/Layout'
 
 const colors = {
     white: "#ffffff",
@@ -19,7 +19,10 @@ const colors = {
     blue: "#0000D3",
     darkgrey: "#404040",
     cyan: "#02ABEA",
-    mint: "#5DA080",
+    lightmint: "#95DCC8",
+    mint: "#83B59E",
+    textmint: "#5DA080",
+    darkmint: "#1B7963",
     lightbrown: "#856D57",
     black: "#000000",
 }
@@ -35,28 +38,26 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Articles</h1>
+              <h1 style={{ color: colors.darkmint }}>Articles</h1>
             </div>
             {postsByCategory
               .map(({ category, posts }) => (
-                <div key={category}>
-                    <h2 style={{ fontSize: '1.2rem'}}>{category}</h2>
+                <CategoryBlock key={category}>
+                    <h2 style={{ fontSize: '1.2rem', margin: 0}}>{category}</h2>
                 {posts.map(({node: post}) => (
-                    <div
+                    <ArticleRow
                       className="content"
                       style={{ margin: '0.25rem 0rem'}}
                       key={post.id}
                     >
-                      <p>
-                        <Link style={{color: colors.mint}} to={post.fields.slug}>
+                        <Link to={post.fields.slug}>
                           {post.frontmatter.title}
                         </Link>
                         <span> &bull; </span>
                         <small >{post.frontmatter.description}</small>
-                      </p>
-                    </div>
+                    </ArticleRow>
                 ))}
-                </div>
+                </CategoryBlock>
               ))}
           </div>
         </section>

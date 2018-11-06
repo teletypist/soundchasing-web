@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout, {CategoryBlock, ArticleRow, Link} from '../components/Layout'
+import Layout, {Tag, CategoryBlock, CategoryHeader, SubHeading, ArticleRow, Link} from '../components/Layout'
+
+import icons from '../components/icons'
 
 const colors = {
     white: "#ffffff",
@@ -38,12 +40,12 @@ export default class IndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1 style={{ color: colors.darkmint }}>Articles</h1>
+              <SubHeading>Articles</SubHeading>
             </div>
             {postsByCategory
               .map(({ category, posts }) => (
                 <CategoryBlock key={category}>
-                    <h2 style={{ fontSize: '1.2rem', margin: 0}}>{category}</h2>
+                    <CategoryHeader>{category}</CategoryHeader>
                 {posts.map(({node: post}) => (
                     <ArticleRow
                       className="content"
@@ -53,7 +55,7 @@ export default class IndexPage extends React.Component {
                         <Link to={post.fields.slug}>
                           {post.frontmatter.title}
                         </Link>
-                        <span> &bull; </span>
+                        {post.frontmatter.tags.map((tag) => (icons[tag]) ?  <Tag key={tag}>{icons[tag]}</Tag> : <Tag key={tag}>{tag}</Tag>)}
                         <small >{post.frontmatter.description}</small>
                     </ArticleRow>
                 ))}
@@ -106,6 +108,7 @@ export const pageQuery = graphql`
             templateKey
             category
             description
+            tags
             date(formatString: "MMMM DD, YYYY")
           }
         }

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {Link as GatsbyLink} from 'gatsby'
 
 import Navbar from '../components/Navbar'
+import icons from './icons'
 
 const colors = {
     white: "#ffffff",
@@ -34,9 +35,19 @@ const Frame = styled.div`
     margin: 1rem auto;
 `
 
+export const SubHeading = styled.h1`
+    color: ${colors.darkmint};
+    text-transform: uppercase;
+`
+
 export const CategoryBlock = styled.div`
     margin: 0rem;
     margin-top: 1rem;
+`
+
+export const CategoryHeader = styled.h2`
+    margin: 0;
+    font-size: 1.2rem;
 `
 
 export const ArticleRow = styled.div`
@@ -45,6 +56,11 @@ export const ArticleRow = styled.div`
 
 export const Link = styled(GatsbyLink)`
     color: ${colors.textmint};
+`
+
+export const Tag = styled.span`
+    margin: 0rem 0.25rem;
+    padding: 0;
 `
 
 const TemplateWrapper = ({ children }) => (

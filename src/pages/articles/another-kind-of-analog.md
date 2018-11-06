@@ -9,6 +9,7 @@ tags:
   - maths
   - synthesis
 ---
+
 ### A Bit of Random History
 
 In the period immediately following the Second World War, computing was ready to break into the commercial and corporate world. It was set to revolutionise how people did business, work, and even live their personal lives. Unfortunately, the technology everything was built on was not that reliable.

@@ -7,6 +7,7 @@ description: Introduction to stochastic computing for synthesising music.
 tags:
   - maths
   - synthesis
+  - code
 ---
 
 ### A Bit of Random History

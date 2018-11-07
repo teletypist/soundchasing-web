@@ -56,7 +56,7 @@ export default class IndexPage extends React.Component {
                           {post.frontmatter.title}
                         </Link>
                         {post.frontmatter.tags.map((tag) => (icons[tag]) ?  <Tag key={tag}>{icons[tag]}</Tag> : <Tag key={tag}>{tag}</Tag>)}
-                        <small >{post.frontmatter.description}</small>
+                        <span>{post.frontmatter.description}</span>
                     </ArticleRow>
                 ))}
                 </CategoryBlock>

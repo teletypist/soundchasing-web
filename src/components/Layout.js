@@ -1,10 +1,20 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
 import {Link as GatsbyLink} from 'gatsby'
 
 import Navbar from '../components/Navbar'
 import icons from './icons'
+import background from '../img/hatch.svg'
+
+const GlobalStyle = createGlobalStyle`
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+`
 
 const colors = {
     white: "#ffffff",
@@ -30,9 +40,20 @@ const colors = {
     black: "#000000",
 }
 
+const Page = styled.div`
+    background: url(${background});
+    min-height: 100%;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+`
+
 const Frame = styled.div`
     max-width: 750px;
-    margin: 1rem auto;
+    min-height: 100vh;
+    margin: 0rem auto;
+    background: white;
+    padding: 1rem 1.5rem;
 `
 
 export const SubHeading = styled.h1`
@@ -64,11 +85,13 @@ export const Tag = styled.span`
 `
 
 const TemplateWrapper = ({ children }) => (
-  <Frame>
+  <Page>
     <Helmet title="Soundchasing - Experiments in pursuit of sound-making" />
-    <Navbar />
-    <div>{children}</div>
-  </Frame>
+    <Frame>
+        <Navbar />
+        <div>{children}</div>
+    </Frame>
+  </Page>
 )
 
 export default TemplateWrapper

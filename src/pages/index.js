@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout, {Tag, CategoryBlock, CategoryHeader, SubHeading, ArticleRow, Link} from '../components/Layout'
+import Layout, {Tag, TagGroup, CategoryBlock, CategoryHeader, SubHeading, ArticleRow, Link} from '../components/Layout'
+
+import { kebabCase } from 'lodash'
 
 import icons from '../components/icons'
 
@@ -55,7 +57,7 @@ export default class IndexPage extends React.Component {
                         <Link to={post.fields.slug}>
                           {post.frontmatter.title}
                         </Link>
-                        {post.frontmatter.tags.map((tag) => (icons[tag]) ?  <Tag key={tag}>{icons[tag]}</Tag> : <Tag key={tag}>{tag}</Tag>)}
+                        <TagGroup>{post.frontmatter.tags.map((tag) => (icons[tag]) ?  <Tag key={tag} to={`/tags/${kebabCase(tag)}/`}>{icons[tag]}</Tag> : <Tag key={tag}>{tag}</Tag>)}</TagGroup>
                         <span>{post.frontmatter.description}</span>
                     </ArticleRow>
                 ))}

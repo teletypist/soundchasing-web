@@ -71,17 +71,31 @@ export const CategoryHeader = styled.h2`
     font-size: 1.2rem;
 `
 
-export const ArticleRow = styled.div`
-    margin: 0rem;
-`
 
 export const Link = styled(GatsbyLink)`
     color: ${colors.textmint};
 `
 
-export const Tag = styled.span`
+export const TagGroup = styled.span`
+    display: inline-flex;
+    align-items: center;
     margin: 0rem 0.25rem;
+`
+
+export const Tag = styled(Link)`
+    margin-right: 0.3rem;
     padding: 0;
+    display: inline-flex;
+    align-items: center;
+
+    :first-child {
+        margin-left: 0.3rem;
+    }
+`
+
+export const ArticleRow = styled.div`
+    margin: 0rem;
+    display: flex;
 `
 
 const TemplateWrapper = ({ children }) => (

@@ -25,6 +25,21 @@ module.exports = {
         name: 'images',
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Rubik`,
+            variants: [`300`, `400`],
+          },
+          {
+            family: `Lato`,
+            variants: [`300`, `300i`, `400`, `400i`],
+          },
+        ],
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

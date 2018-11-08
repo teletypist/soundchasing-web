@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import styled, {createGlobalStyle} from 'styled-components'
 import {Link as GatsbyLink} from 'gatsby'
+import { kebabCase } from 'lodash'
 
 import Navbar from '../components/Navbar'
 import icons from './icons'
@@ -37,6 +38,7 @@ const colors = {
     textmint: "#5DA080",
     darkmint: "#1B7963",
     lightbrown: "#856D57",
+    navy: "#001f3f",
     black: "#000000",
 }
 
@@ -57,7 +59,7 @@ const Frame = styled.div`
 `
 
 export const SubHeading = styled.h1`
-    color: ${colors.darkmint};
+    color: ${colors.navy};
     text-transform: uppercase;
 `
 
@@ -97,6 +99,18 @@ export const ArticleRow = styled.div`
     margin: 0rem;
     display: flex;
 `
+
+
+export const Tags = ({tags, width="1.1rem"}) =>
+<TagGroup>
+    {tags.sort().map((tag) => {
+        let Icon = icons[tag]
+        return <Tag key={tag} to={`/tags/${kebabCase(tag)}/`}>
+            {(Icon) ? <Icon width={width}/> : tag}
+        </Tag>
+        })
+    }
+</TagGroup>
 
 const TemplateWrapper = ({ children }) => (
   <Page>

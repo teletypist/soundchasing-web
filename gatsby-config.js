@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-styled-components',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -42,6 +43,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    `gatsby-plugin-catch-links`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {

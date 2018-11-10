@@ -33,6 +33,8 @@ const colors = {
 const SiteHeading = styled.h1`
     text-transform: uppercase;
     margin: 0rem;
+    opacity: ${(props) => (props.fade) ? 1/props.fade : 1.0};
+    text-decoration: underline;
 `
 
 const Link = styled(GatsbyLink)`
@@ -49,7 +51,7 @@ const Navbar = () => (
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
             {([1, 2, 3, 4, 5]).map((index) =>
-                <SiteHeading>Sound Chasing</SiteHeading>
+                <SiteHeading fade={2**(index-1)}>Sound Chasing</SiteHeading>
             )}
         </Link>
       </div>
